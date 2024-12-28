@@ -11,6 +11,7 @@ public:
     int armorClass;
 
     Monster(const std::string& name, const std::string& type, int hitDice, int armorClass);
+    std::string getName() const;
     // Other methods...
 };
 

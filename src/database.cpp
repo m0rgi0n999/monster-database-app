@@ -4,9 +4,14 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 class Database {
 public:
+    Database() {}
+
+    ~Database() {}
+
     void addMonster(const Monster& monster) {
         monsters.push_back(monster);
     }
@@ -25,15 +30,21 @@ public:
 
         std::string line;
         while (std::getline(file, line)) {
-            // Assuming the line format is "name,type,stats"
+            // Assuming the line format is "name,type,hitDice,armorClass"
             std::istringstream iss(line);
-            std::string name, type, stats;
-            if (std::getline(iss, name, ',') && std::getline(iss, type, ',') && std::getline(iss, stats)) {
-                Monster monster(name, type, stats);
-                addMonster(monster);
+            std::string name, type;
+            int hitDice, armorClass;
+            if (iss >> name >> type >> hitDice >> armorClass) {
+                addMonster(Monster(name, type, hitDice, armorClass));
             }
         }
-        file.close();
+    }
+
+    void displayMonsters() const {
+        for (const auto& monster : monsters) {
+            std::cout << "Name: " << monster.name << ", Type: " << monster.type
+                      << ", Hit Dice: " << monster.hitDice << ", Armor Class: " << monster.armorClass << std::endl;
+        }
     }
 
 private:
