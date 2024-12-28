@@ -22,7 +22,7 @@ monster-database-app
 
 1. **Clone the repository:**
    ```
-   git clone <repository-url>
+   git clone https://github.com/m0rgi0n999/monster-database-app.git
    cd monster-database-app
    ```
 

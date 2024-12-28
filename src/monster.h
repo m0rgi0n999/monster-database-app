@@ -1,3 +1,8 @@
+#ifndef MONSTER_H
+#define MONSTER_H
+
+#include <string>
+
 class Monster {
 public:
     Monster(const std::string& name, const std::string& type, int hitDice, int armorClass, int damage);
@@ -21,3 +26,5 @@ private:
     int armorClass;
     int damage;
 };
+
+#endif // MONSTER_H
