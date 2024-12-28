@@ -5,6 +5,12 @@
 
 class Monster {
 public:
+    std::string name;
+    std::string type;
+    int hitDice;
+    int armorClass;
+    int damage;
+    
     Monster(const std::string& name, const std::string& type, int hitDice, int armorClass, int damage);
     
     std::string getName() const;
