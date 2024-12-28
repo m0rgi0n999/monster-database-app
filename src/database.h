@@ -13,6 +13,7 @@ public:
     void removeMonster(const std::string& monsterName);
     void importMonsters(const std::string& filename);
     void displayMonsters() const;
+    void addMonsterFromInput(); // New method
 
 private:
     std::vector<Monster> monsters;

@@ -48,3 +48,20 @@ void Database::displayMonsters() const {
                   << ", Hit Dice: " << monster.hitDice << ", Armor Class: " << monster.armorClass << std::endl;
     }
 }
+
+void Database::addMonsterFromInput() {
+    std::string name, type;
+    int hitDice, armorClass;
+
+    std::cout << "Enter monster name: ";
+    std::getline(std::cin, name);
+    std::cout << "Enter monster type: ";
+    std::getline(std::cin, type);
+    std::cout << "Enter monster hit dice: ";
+    std::cin >> hitDice;
+    std::cout << "Enter monster armor class: ";
+    std::cin >> armorClass;
+    std::cin.ignore(); // Ignore the newline character left in the buffer
+
+    addMonster(Monster(name, type, hitDice, armorClass));
+}
