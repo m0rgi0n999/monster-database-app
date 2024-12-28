@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <sstream> // Include the sstream header
 
 Database::Database() {}
 
